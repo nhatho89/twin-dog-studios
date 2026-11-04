@@ -804,13 +804,18 @@ ol {
 
 .footer-top-bg {
 	position: absolute;
-	left: 30px;
+	left: 40px;
 	bottom: 70px;
 	z-index: 2;
+	text-align: center;
 
 	img {
 		max-width: 300px;
 	}
+}
+
+.footer-logo  {
+	text-align: center;
 }
 
 .footer-logo img {
@@ -1324,8 +1329,9 @@ ol {
 }
 
 .social-links { 
+	text-align: center;
 	margin-top: 20px;
-	margin-left: 20px;
+	/* margin-left: 20px; */
 }
 
 .social-links a {
@@ -1402,6 +1408,7 @@ ol {
 		padding-left: 95px;
 	}
 	.footer-top-bg {
+		left: 5px;
 		max-width: 370px;
 	}
 	.page-info-section .pi-content h2 {
