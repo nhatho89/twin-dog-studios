@@ -134,8 +134,9 @@
 					<div class="contact-form-warp">
 						<h4 class="comment-title">Leave a Reply</h4>
 						<form class="comment-form" action="https://formspree.io/f/mdkynglv" method="POST">
-							<!-- Hidden input for Firebase User ID passed via URL parameters -->
-							<input type="hidden" id="userIdInput" name="firebase_user_id" value="">
+							<!-- Hidden inputs with safe defaults -->
+							<input type="hidden" id="userIdInput" name="firebase_user_id" value="Not provided">
+							<input type="hidden" id="gameInput" name="game_title" value="General Inquiry">
 
 							<div class="row">
 								<div class="col-md-6">
@@ -145,7 +146,7 @@
 									<input type="email" name="_replyto" placeholder="Email" required>
 								</div>
 								<div class="col-lg-12">
-									<input type="text" name="subject" placeholder="Subject">
+									<input type="text" id="subjectInput" name="subject" placeholder="Subject">
 									<textarea name="message" placeholder="Message" rows="5" required></textarea>
 									<button type="submit" class="site-btn btn-sm">Send</button>
 								</div>
@@ -282,14 +283,37 @@
 	<!-- Script to grab ?userId= from URL and inject it into the form -->
 	<script>
 		window.addEventListener('DOMContentLoaded', () => {
-			const urlParams = new URLSearchParams(window.location.search);
-			const userId = urlParams.get('userId');
+			try {
+				const urlParams = new URLSearchParams(window.location.search);
+				
+				// 1. Get raw parameter values
+				const rawUserId = urlParams.get('userId');
+				const rawGame = urlParams.get('game');
 
-			if (userId) {
-				const targetInput = document.getElementById('userIdInput');
-				if (targetInput) {
-					targetInput.value = userId;
+				// 2. Fallback logic: check if parameter is null, undefined, or empty string
+				const userId = (rawUserId && rawUserId.trim() !== '') ? rawUserId.trim() : 'Not provided';
+				const game = (rawGame && rawGame.trim() !== '') ? rawGame.trim() : 'General Inquiry';
+
+				// 3. Inject safely into hidden inputs
+				const userIdInput = document.getElementById('userIdInput');
+				if (userIdInput) {
+					userIdInput.value = userId;
 				}
+
+				const gameInput = document.getElementById('gameInput');
+				if (gameInput) {
+					gameInput.value = game;
+				}
+
+				// 4. Optional: Auto-fill subject if game is specified
+				const subjectInput = document.getElementById('subjectInput');
+				if (subjectInput && game !== 'General Inquiry' && !subjectInput.value) {
+					subjectInput.value = `[Support] ${game.replace('-', ' ').toUpperCase()}`;
+				}
+
+			} catch (error) {
+				// Guarantee no unhandled exception breaks the UI if URL parsing fails
+				console.warn('URL parameter parsing failed:', error);
 			}
 		});
 	</script>
