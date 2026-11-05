@@ -27,6 +27,179 @@
     <![endif]-->
 
 	<style>
+        body {
+            background-color: #f8f9fa;
+            color: #333333;
+        }
+
+        .single-blog-page {
+            background: #f8f9fa;
+            padding-top: 20px;
+        }
+
+        /* Header Page Info Section Overlay (Soft Light Gradient over Hero Image) */
+        .page-info-section {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            min-height: 220px;
+        }
+
+        .page-info-section::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.2) 100%);
+            z-index: 1;
+        }
+
+        /* Title Header Block */
+        .main-title-block {
+            background: #ffffff;
+            border: 1px solid #e9ecef;
+            border-left: 4px solid #d3a74e;
+            padding: 25px 30px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .main-title-block h1 {
+            color: #1a1a1a;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .main-title-block p {
+            color: #6c757d;
+            font-size: 16px;
+            margin-bottom: 0;
+        }
+
+        /* Blog Content Container */
+        .blog-content {
+            background: #ffffff;
+            border: 1px solid #e9ecef;
+            padding: 35px;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .blog-content h3 {
+            color: #1a1a1a;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .blog-content h4 {
+            color: #d3a74e;
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .blog-content h4::before {
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 18px;
+            background: #d3a74e;
+            margin-right: 12px;
+            border-radius: 2px;
+        }
+
+        .blog-content p {
+            color: #495057;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        /* Screenshot Containers */
+        .tutorial-img-wrap {
+            position: relative;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin: 20px 0 25px 0;
+            transition: all 0.3s ease;
+        }
+
+        .tutorial-img-wrap:hover {
+            border-color: #d3a74e;
+            box-shadow: 0 6px 18px rgba(211, 167, 78, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .tutorial-img-wrap img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Gold Bullet List Accents */
+        .blog-content ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 15px;
+        }
+
+        .blog-content ul li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            color: #495057;
+            font-size: 15px;
+        }
+
+        .blog-content ul li::before {
+            content: "•";
+            position: absolute;
+            left: 4px;
+            top: -2px;
+            color: #d3a74e;
+            font-size: 20px;
+        }
+
+        .blog-content ul li strong {
+            color: #1a1a1a;
+        }
+
+        .blog-content hr {
+            border-top: 1px solid #e9ecef;
+            margin: 35px 0;
+        }
+
+        /* App Store Button */
+        /* .app-store-btn {
+            background: #d3a74e !important;
+            color: #ffffff !important;
+            font-weight: 700;
+            border: none;
+            padding: 15px;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(211, 167, 78, 0.3);
+            transition: all 0.3s ease;
+        } */
+
+        .app-store-btn:hover {
+            background: #b88e38 !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(211, 167, 78, 0.4);
+        }
+    </style>
+
+	<!-- <style>
 		.page-info-section {
 			position: relative;
 			background-size: cover;
@@ -52,7 +225,7 @@
 			z-index: 2;
 			width: 100%;
 		}
-	</style>
+	</style> -->
 </head>
 
 <body>
@@ -101,64 +274,82 @@
 	<!-- Page info section -->
 
 	<!-- Page section -->
-	<section class="page-section single-blog-page spad">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8">
-					<div class="blog-thumb set-bg" data-setbg="img/saigonstreetbrawl/slider-2.jpg">
-						<div class="cata racing">In Development</div>
-					</div>
-					<div class="blog-content">
-						<h3>Brew Chaos. Clear the Streets. Claim the Corporate Underworld.</h3>
-						<p>Set deep in the neon-lit alleys and bustling districts of Saigon, <strong>Saigon Street
-								Brawl: Caffeine Rush</strong> combines high-octane arcade brawler action with
-							hyper-charged coffee corporate warfare. Master fast-paced combos, defend your local brew
-							stands from rival syndicates, and climb your way from the pavement to the top seat of the
-							caffeine empire.</p>
-						<p>Featuring gritty urban environments inspired by Saigon nightlife, fluid beat-'em-up
-							mechanics. This title is currently in active development at Twin Dog Studios. Stay tuned for
-							upcoming developer logs, playtest dates, and early access announcements!</p>
-					</div>
-				</div>
-				<!-- sidebar -->
-				<div class="col-lg-4 col-md-7 sidebar pt-5 pt-lg-0">
+    <section class="page-section single-blog-page spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Stylized Main Page Title -->
+                    <div class="main-title-block">
+                        <h1>Saigon Street Brawl</h1>
+                        <div class="post-meta"
+                            style="color: #d3a74e; font-size: 13px; font-weight: 500; margin-bottom: 8px;">
+                            <!-- <span><i class="fa fa-calendar"></i> November 2026</span> &nbsp;|&nbsp; -->
+                            <span><i class="fa fa-gamepad"></i> In Development</span>
+                        </div>
+                        <p>Brew Chaos. Clear the Streets. Claim the Corporate Underworld.</p>
+                    </div>
 
-					<!-- Check Out Other Games Section -->
-					<div class="widget-item">
-						<h4 class="widget-title"
-							style="font-size: 18px; font-weight: 700; color: #1a1a1a; margin-bottom: 15px; border-bottom: 2px solid #d3a74e; padding-bottom: 8px;">
-							Check Out Other Games</h4>
-						<div class="feature-item set-bg" data-setbg="img/freestylecards/marketing-freestylecards-1.jpg">
-							<span class="cata new">Available Now</span>
-							<div class="fi-content text-white">
-								<h5>Freestyle Cards</h5>
-								<p>Lose restrictive decks and play any game you can imagine in the ultimate digital card
-									sandbox.</p>
-								<a href="freestyle-cards-game-page.html" class="site-btn">See More</a>
-							</div>
-						</div>
-					</div>
+                    <!-- Main Teaser Banner -->
+                    <div class="tutorial-img-wrap">
+                        <img src="img/saigonstreetbrawl/slider-2.jpg" alt="Saigon Street Brawl Teaser Preview">
+                    </div>
 
-					<!-- Related Articles Section -->
-					<div class="widget-item">
-						<h4 class="widget-title"
-							style="font-size: 18px; font-weight: 700; color: #1a1a1a; margin-bottom: 15px; border-bottom: 2px solid #d3a74e; padding-bottom: 8px;">
-							Related Articles</h4>
-						<!-- <div class="feature-item set-bg" data-setbg="img/freestylecards-icon.jpg">
-                            <span class="cata racing">Guide</span>
+                    <!-- Blog Content Box -->
+                    <div class="blog-content">
+                        <h3>Caffeine-Fueled Arcade Beat-'Em-Up Action</h3>
+                        <p>Set deep in the neon-lit alleys, bustling street corners, and high-rise districts of Saigon, <strong>Saigon Street Brawl: Caffeine Rush</strong> combines high-octane arcade brawler action with hyper-charged coffee corporate warfare.</p>
+                        
+                        <p>Master fast-paced combo chains, defend your local brew stands from rival syndicates, and climb your way from pavement coffee carts to the top executive seat of the caffeine empire.</p>
+
+                        <hr>
+
+                        <h4>Key Highlights & Features</h4>
+                        <p>Currently in active development at Twin Dog Studios, <em>Saigon Street Brawl</em> is being crafted to bring classic side-scrolling beat-'em-up nostalgia into a vibrant, modern setting:</p>
+                        
+                        <ul>
+                            <li><strong>Fast-Paced Combo Combat:</strong> String together rapid punches, heavy strikes, special coffee-boosted power moves, and environmental counters to clear out swarms of rival enforcers.</li>
+                            <li><strong>Saigon-Inspired Arenas:</strong> Battle through stylized urban environments inspired by Saigon's iconic street food markets, hidden alleyways, and glowing rooftop lounges.</li>
+                            <li><strong>Territory & Stall Defense:</strong> Protect your mobile brew stands and upgrade your street spots as you expand your faction's influence district by district.</li>
+                            <li><strong>Expressive Character Roster:</strong> Choose from a roster of unique brawlers, each bringing distinct fighting styles, special finishers, and personal storylines.</li>
+                        </ul>
+
+                        <hr>
+
+                        <h4>Development Roadmap</h4>
+                        <p>We are actively building core gameplay loops, character animations, and level designs. Stay tuned for upcoming developer logs, playtest signups, and early teaser trailers as we move closer to our first playable demo!</p>
+                    </div>
+                </div>
+
+                <!-- Sidebar Widget Area -->
+                <div class="col-lg-4 col-md-7 sidebar pt-5 pt-lg-0">
+
+                    <!-- Check Out Other Games Section -->
+                    <div class="widget-item">
+                        <h4 class="widget-title"
+                            style="font-size: 18px; font-weight: 700; color: #1a1a1a; margin-bottom: 15px; border-bottom: 2px solid #d3a74e; padding-bottom: 8px;">
+                            Check Out Other Games</h4>
+                        <div class="feature-item set-bg" data-setbg="img/freestylecards/marketing-freestylecards-1.jpg">
+                            <span class="cata new">Available Now</span>
                             <div class="fi-content text-white">
-                                <h5><a href="freestyle-cards-tutorial.html">How to Play Freestyle Cards</a></h5>
-                                <p>Master the controls, setup table rules, deal cards, and customize your sandbox game session.</p>
-                                <a href="freestyle-cards-tutorial.html" class="site-btn">See More</a>
+                                <h5>Freestyle Cards</h5>
+                                <p>Lose restrictive decks and play any game you can imagine in the ultimate digital card sandbox.</p>
+                                <a href="freestyle-cards-game-page.html" class="site-btn">See More</a>
                             </div>
-                        </div> -->
-					</div>
+                        </div>
+                    </div>
 
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Page section end -->
+                    <!-- Related Articles Section -->
+                    <div class="widget-item">
+                        <h4 class="widget-title"
+                            style="font-size: 18px; font-weight: 700; color: #1a1a1a; margin-bottom: 15px; border-bottom: 2px solid #d3a74e; padding-bottom: 8px;">
+                            Related Articles</h4>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Page section end -->
 
 	<!-- Footer top section -->
 	<section class="footer-top-section">
