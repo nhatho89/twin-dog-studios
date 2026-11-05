@@ -26,33 +26,177 @@
     <![endif]-->
 
 	<style>
-		.page-info-section {
-			position: relative;
-			background-size: cover;
-			background-position: center;
-			min-height: 300px;
-			/* Ensures the banner has vertical space */
-			display: flex;
-			align-items: center;
-		}
+        body {
+            background-color: #f8f9fa;
+            color: #333333;
+        }
 
-		.page-info-section::after {
-			content: "";
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%);
-			z-index: 1;
-		}
+        .single-blog-page {
+            background: #f8f9fa;
+            padding-top: 20px;
+        }
 
-		.page-info-section .pi-content {
-			position: relative;
-			z-index: 2;
-			width: 100%;
-		}
-	</style>
+        /* Header Page Info Section Overlay (Soft Light Gradient over Hero Image) */
+        .page-info-section {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            min-height: 220px;
+        }
+
+        .page-info-section::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.2) 100%);
+            z-index: 1;
+        }
+
+        /* Title Header Block */
+        .main-title-block {
+            background: #ffffff;
+            border: 1px solid #e9ecef;
+            border-left: 4px solid #d3a74e;
+            padding: 25px 30px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .main-title-block h1 {
+            color: #1a1a1a;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .main-title-block p {
+            color: #6c757d;
+            font-size: 16px;
+            margin-bottom: 0;
+        }
+
+        /* Blog Content Container */
+        .blog-content {
+            background: #ffffff;
+            border: 1px solid #e9ecef;
+            padding: 35px;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .blog-content h3 {
+            color: #1a1a1a;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .blog-content h4 {
+            color: #d3a74e;
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .blog-content h4::before {
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 18px;
+            background: #d3a74e;
+            margin-right: 12px;
+            border-radius: 2px;
+        }
+
+        .blog-content p {
+            color: #495057;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        /* Screenshot Containers */
+        .tutorial-img-wrap {
+            position: relative;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin: 20px 0 25px 0;
+            transition: all 0.3s ease;
+        }
+
+        .tutorial-img-wrap:hover {
+            border-color: #d3a74e;
+            box-shadow: 0 6px 18px rgba(211, 167, 78, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .tutorial-img-wrap img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Gold Bullet List Accents */
+        .blog-content ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 15px;
+        }
+
+        .blog-content ul li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            color: #495057;
+            font-size: 15px;
+        }
+
+        .blog-content ul li::before {
+            content: "•";
+            position: absolute;
+            left: 4px;
+            top: -2px;
+            color: #d3a74e;
+            font-size: 20px;
+        }
+
+        .blog-content ul li strong {
+            color: #1a1a1a;
+        }
+
+        .blog-content hr {
+            border-top: 1px solid #e9ecef;
+            margin: 35px 0;
+        }
+
+        /* App Store Button */
+        /* .app-store-btn {
+            background: #d3a74e !important;
+            color: #ffffff !important;
+            font-weight: 700;
+            border: none;
+            padding: 15px;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(211, 167, 78, 0.3);
+            transition: all 0.3s ease;
+        } */
+
+        .app-store-btn:hover {
+            background: #b88e38 !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(211, 167, 78, 0.4);
+        }
+    </style>
 </head>
 
 <body>
@@ -102,84 +246,117 @@
 
 	<!-- Page section -->
 	<section class="page-section single-blog-page spad">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8">
-					<div class="blog-thumb set-bg" data-setbg="img/freestylecards/marketing-freestylecards-2.jpg">
-						<!-- <div class="cata new">sandbox</div> -->
-						<!-- <div class="rgi-extra">
-                            <div class="rgi-star"><img src="img/icons/star.png" alt=""></div>
-                            <div class="rgi-heart"><img src="img/icons/heart.png" alt=""></div>
-                        </div> -->
-					</div>
-					<div class="blog-content">
-						<h3>Any Game. Any Rule. Any Place. Play Without Limits.</h3>
-						<p>Freestyle Cards redefines digital tabletop gaming by giving you total freedom over the cards.
-							Whether you are inventing a brand new card game or just looking for a versatile sandbox
-							environment to play classic card games with your friends online, Freestyle Cards adapts
-							entirely to your rules.</p>
-						<p>Designed with intuitive multiplayer tools and a fluid user interface, the application
-							empowers creators and players alike to break the boundaries of physical card restrictions.
-							Build your layouts, set your parameters and invite your group for game night from anywhere
-							in the world. Available now on the Apple App Store.</p>
-					</div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Stylized Main Page Title -->
+                    <div class="main-title-block">
+                        <h1>Freestyle Cards</h1>
+                        <div class="post-meta"
+                            style="color: #d3a74e; font-size: 13px; font-weight: 500; margin-bottom: 8px;">
+                            <span><i class="fa fa-calendar"></i> November 2026</span> &nbsp;|&nbsp;
+                            <span><i class="fa fa-apple"></i> iOS App Store</span>
+                        </div>
+                        <p>Any Game. Any Rule. Any Place. Play Without Limits.</p>
+                    </div>
 
-					<hr>
+                    <!-- Main Marketing Banner -->
+                    <div class="tutorial-img-wrap">
+                        <img src="img/freestylecards/marketing-freestylecards-2.jpg" alt="Freestyle Cards Marketing Preview">
+                    </div>
 
-					<h3>Your Data & Privacy</h3>
-					<p>We respect your privacy and believe in complete transparency about how technical data is handled. To learn more about how device identifiers and tracking permissions are handled, please review our full <a href="freestylecards-privacy-policy.html" style="color: #d3a74e; font-weight: 600; text-decoration: underline;">Privacy Policy</a>.</p>
-				</div>
+                    <!-- Blog Content Box -->
+                    <div class="blog-content">
+                        <h3>A True Digital Tabletop Sandbox</h3>
+                        <p>Freestyle Cards redefines digital tabletop gaming by giving you total freedom over the felt. Whether you are inventing a brand new card game from scratch, testing homebrew mechanics, or looking for an open sandbox environment to play classic card games with your friends online, Freestyle Cards adapts entirely to your vision.</p>
+                        
+                        <p>Instead of locking you into rigid automated game loops, enforced turn structures, or scripted winning conditions, Freestyle Cards acts as a real world physical deck on a virtual table. You control the cards, you set the parameters, and your group enforces the house rules—just like gathered around a kitchen table on game night.</p>
 
-				<!-- sidebar -->
-				<div class="col-lg-4 col-md-7 sidebar pt-5 pt-lg-0">
-					<!-- App Store Download Widget -->
-					<div class="widget-item">
-						<div class="app-store-widget text-center">
-							<a href="https://apps.apple.com/us/app/freestyle-cards/id6754509574" target="_blank"
-								class="site-btn btn-block app-store-btn">
-								<i class="fa fa-apple" aria-hidden="true"></i> Download on App Store
-							</a>
-						</div>
-					</div>
+                        <hr>
 
-					<!-- Check Out Other Games Section -->
-					<div class="widget-item">
-						<h4 class="widget-title"
-							style="font-size: 18px; font-weight: 700; color: #1a1a1a; margin-bottom: 15px; border-bottom: 2px solid #d3a74e; padding-bottom: 8px;">
-							Check Out Other Games</h4>
-						<div class="feature-item set-bg" data-setbg="img/saigonstreetbrawl/slider-2.jpg">
-							<span class="cata racing">In Development</span>
-							<div class="fi-content text-white">
-								<h5>Saigon Street Brawl: Caffeine Rush</h5>
-								<p>Step into neon alleys, brew chaos, and brawl your way to the top of the coffee
-									corporate underworld.</p>
-								<a href="saigon-street-brawl-game-page.html" class="site-btn">See More</a>
-							</div>
-						</div>
-					</div>
+                        <h4>Core Features & Table Control</h4>
+                        <p>Designed with fluid, tactile interactions and an intuitive multiplayer toolkit, the app empowers players to break free from traditional digital card game restrictions:</p>
+                        
+                        <ul>
+                            <li><strong>Total Tabletop Freedom:</strong> Drag, flip, stack, rotate, and deal cards freely across the central play area. Move individual cards or select groups with responsive multi card controls.</li>
+                            <li><strong>Granular Dealing & Hand Controls:</strong> Deal specified card counts directly to individual player seats or distribute evenly across all participants with a single tap. Instantly sort, shuffle, or clear your hand whenever needed.</li>
+                            <li><strong>Custom Room Rules & Conditions:</strong> Configure card visibility on the fly. Toggle whether drawn cards default to face down, hide hands for hidden information games, or reveal all hands for open information practice sessions. Save your room presets to instantly reload custom game setups in future matches.</li>
+                            <li><strong>Real Time Multiplayer & Session Persistence:</strong> Host private or open tables using unique Game IDs. Real time state synchronization keeps room state, player hands, and active card stacks perfectly aligned across all connected devices.</li>
+                            <li><strong>Table Customization Engine:</strong> Tailor your play space with custom felt colors, border palettes, background atmospheres, and custom card deck designs. Save your favorite visual themes to create distinct gaming atmospheres.</li>
+                            <li><strong>Expressive Table Communication:</strong> Stay engaged during heated matches with live chat and instant reaction banners that display active feedback directly over player seats and game logs.</li>
+                        </ul>
 
-					<!-- Related Articles Section -->
-					<div class="widget-item">
-						<h4 class="widget-title"
-							style="font-size: 18px; font-weight: 700; color: #1a1a1a; margin-bottom: 15px; border-bottom: 2px solid #d3a74e; padding-bottom: 8px;">
-							Related Articles</h4>
-						<div class="feature-item set-bg" data-setbg="img/freestylecards/marketing-freestylecards-2.jpg">
-							<span class="cata racing">How to Play</span>
-							<div class="fi-content text-white">
-								<h5>FreestyleCards</h5>
-								<p>Master the controls, setup table rules, deal cards, and customize your sandbox game
-									session.</p>
-								<a href="freestyle-cards-tutorial.html" class="site-btn">See More</a>
-							</div>
-						</div>
-					</div>
+                        <hr>
 
+                        <h4>Premium Upgrades & Host Perks</h4>
+                        <p>While the core card sandbox is completely free to play, <em>Freestyle Cards</em> offers optional premium upgrades—available as a monthly subscription or a one time Lifetime Purchase—as well as standalone deck collections to elevate your gaming experience:</p>
+                        
+                        <ul>
+                            <li><strong>Ad Free Tabletop for Everyone:</strong> When the host of a room holds an active Premium Subscription or Lifetime Pass, advertisements are completely removed for <em>all connected players</em> at that table for the entire session.</li>
+                            <li><strong>Custom Center Table Branding:</strong> Premium members get their studio or player name permanently emblazoned across the center felt of their virtual table.</li>
+                            <li><strong>Custom Table Sharing:</strong> Design your ultimate tabletop layout with personalized color palettes, felt textures, and ambient backgrounds, then share your custom table design live with everyone in your room.</li>
+                            <li><strong>Standalone Deck Purchases:</strong> In addition to premium features, players can purchase individual thematic card decks from minimalist suits to vibrant geometric artwork to customize their personal hand and table aesthetics without needing a subscription.</li>
+                            <li><strong>Seamless Cross Device Restores:</strong> All premium passes and deck purchases are tied securely to your Apple / Google account, allowing you to restore your unlocks on any device with a single tap.</li>
+                        </ul>
 
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Page section end -->
+                        <hr>
+
+                        <h4>Regional Availability</h4>
+                        <p><em>Freestyle Cards</em> is available for download on iOS worldwide across supported App Store regions, excluding European Union (EU) countries, Vietnam, Mainland China, and South Korea.</p>
+
+                        <hr>
+
+                        <h4>Your Data & Privacy</h4>
+                        <p>We respect your privacy and believe in complete transparency about how technical data is handled. To learn more about how device identifiers and tracking permissions are handled, please review our full <a href="freestylecards-privacy-policy.html" style="color: #d3a74e; font-weight: 600; text-decoration: underline;">Privacy Policy</a>.</p>
+                    </div>
+                </div>
+
+                <!-- Sidebar Widget Area -->
+                <div class="col-lg-4 col-md-7 sidebar pt-5 pt-lg-0">
+                    <!-- App Store Download Widget -->
+                    <div class="widget-item">
+                        <div class="app-store-widget text-center">
+                            <a href="https://apps.apple.com/us/app/freestyle-cards/id6754509574" target="_blank"
+                                class="site-btn btn-block app-store-btn">
+                                <i class="fa fa-apple" aria-hidden="true"></i> Download on App Store
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Check Out Other Games Section -->
+                    <div class="widget-item">
+                        <h4 class="widget-title"
+                            style="font-size: 18px; font-weight: 700; color: #1a1a1a; margin-bottom: 15px; border-bottom: 2px solid #d3a74e; padding-bottom: 8px;">
+                            Check Out Other Games</h4>
+                        <div class="feature-item set-bg" data-setbg="img/saigonstreetbrawl/slider-2.jpg">
+                            <span class="cata racing">In Development</span>
+                            <div class="fi-content text-white">
+                                <h5>Saigon Street Brawl: Caffeine Rush</h5>
+                                <p>Step into neon alleys, brew chaos, and brawl your way to the top of the coffee corporate underworld.</p>
+                                <a href="saigon-street-brawl-game-page.html" class="site-btn">See More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Related Articles Section -->
+                    <div class="widget-item">
+                        <h4 class="widget-title"
+                            style="font-size: 18px; font-weight: 700; color: #1a1a1a; margin-bottom: 15px; border-bottom: 2px solid #d3a74e; padding-bottom: 8px;">
+                            Related Articles</h4>
+                        <div class="feature-item set-bg" data-setbg="img/freestylecards/marketing-freestylecards-2.jpg">
+                            <span class="cata racing">How to Play</span>
+                            <div class="fi-content text-white">
+                                <h5>FreestyleCards</h5>
+                                <p>Master the controls, setup table rules, deal cards, and customize your sandbox game session.</p>
+                                <a href="freestyle-cards-tutorial.html" class="site-btn">See More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Page section end -->
 
 	<!-- Footer top section -->
 	<section class="footer-top-section">
